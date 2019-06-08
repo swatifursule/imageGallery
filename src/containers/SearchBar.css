@@ -1,0 +1,15 @@
+.search-text-box {
+    height: 34px;
+    line-height: 34px;
+    padding: 10px;
+}
+
+.search-container{
+    margin-top: 2rem;
+    padding-left: 1rem;
+    text-align: center;
+}
+
+.button {
+    height: 34px;
+}

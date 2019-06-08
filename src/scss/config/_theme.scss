@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #Base Theme
+   ========================================================================== */
+
+/**
+ * Base theme styling. Import this file after any other theme file.
+ *
+ * Each color defined in this SCSS file is set as !default, which means that
+ * if no other variable of that name is found, the SCSS compiler will use
+ * the value from the !default variable.
+ *
+ * 1. Slightly nicer than pure black. A little less contrast is easier
+ *    on the eyes.
+ */
+
+$swatch-black: #181818 !default; /* [1] */
+$swatch-white: #fff !default;
+
+$swatch-green: #39b54a;
+$swatch-red: #b23939;
+$swatch-orange: #e88b51;
+
+$swatch-background-main: #f3f5f6;
+$swatch-border-main: #eaeaea;
+
+$swatch-primary: #20063b;
+$swatch-primary-alt: #cc3363;

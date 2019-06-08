@@ -1,0 +1,27 @@
+@import '../../scss/includes';
+
+.header {
+    padding-bottom: pxtorem(50);
+    padding-top: pxtorem(50);
+
+    @include breakpoint(800px) {
+        padding-bottom: pxtorem(100);
+        padding-top: pxtorem(100);
+    }
+}
+
+.title {
+    $map: (
+        0: 24px,
+        380px: 24px,
+        800px: 48px
+    );
+    @include poly-fluid-sizing('font-size', $map);
+
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+
+    @include breakpoint(0, 800px) {
+        text-align: center;
+    }
+}

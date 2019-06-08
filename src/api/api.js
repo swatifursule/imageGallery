@@ -1,55 +1,15 @@
-import axios from "axios";
-import uuid from 'uuid';
-const BASE_URL = `http://localhost:3020/images`
+import axios from 'axios';
 
+import FETCH_IMAGE_DATA from '../store/actions';
 
-export function fetchImages(tag) {
-    const url = `${BASE_URL}?format=json&tags=${tag}`
-    console.log('The url for the request is: ',url)
+//const API_ROOT_URL = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=true&tags=";
+const API_ROOT_URL = "http://localhost:3020/images?q=";
 
-    return axios({
-        method: "get",
-        url
-    });
-}
-
-export function handleFlickrResponseItem({
-                                      title,
-                                      link,
-                                      author,
-                                      tags,
-                                      media:{
-                                          m:thumbnail
-                                      }
-                                  }) {
-    const startIndex = author.indexOf("(") + 1
-    const endIndex = author.indexOf(")");
-    author = author.substr(startIndex,endIndex)
-    tags = tags.split(" ")
+export function fetchImage(searchTerm){
+  const url =   API_ROOT_URL + searchTerm;
+   const response = axios.get(url);
     return {
-        title,
-        link,
-        thumbnail,
-        tags,
-        author
+        type : FETCH_IMAGE_DATA,
+        payload: response
     }
-}
-
-export function handleFlickrResponse({data}) {
-    return data.items.map(handleFlickrResponseItem)
-}
-
-export function addKeyToThumbnails(items) {
-    return items.map(item => {
-        item.key = uuid.v1();
-        item.tags = addKeyToTags(item)
-        return item;
-    })
-}
-
-export function addKeyToTags(item) {
-    return item.tags.map(tag => ({
-        value:tag,
-        key:uuid.v1()
-    }))
 }

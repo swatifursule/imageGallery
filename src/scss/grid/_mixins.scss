@@ -1,0 +1,33 @@
+// Use these following functions ad-hoc when you need to build a grid in
+// pure CSS. This will work without classes on DOM elements.
+
+/**
+ * Define the element as a column when included
+ * @param  {integer} $col-span How many columns wide should the element be
+ * @param  {integer} $width    [Optional] Context for the calculations
+ * @return {void}
+ */
+@mixin column($col-span, $width: $site-max-width) {
+    // padding: (column-padding() / 2);
+    width: column-width($col-span, $width);
+}
+
+/**
+ * Content of a column. This is completely optional.
+ */
+@mixin column-content {
+    padding: column-padding();
+}
+
+/**
+ * Define the element as a column when included, then center it in container
+ * @param  {integer} $col-span How many columns wide should the element be
+ * @param  {integer} $width    [Optional] Context for the calculations
+ * @return {void}
+ */
+@mixin column-center($col-span, $width: $site-max-width) {
+    @include column-width($col-span, $width);
+
+    float: none;
+    margin: 0 auto;
+}

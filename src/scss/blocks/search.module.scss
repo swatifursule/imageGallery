@@ -1,0 +1,51 @@
+@import '../../scss/includes';
+
+.form {
+    display: flex;
+    margin-top: pxtorem(50px);
+    width: 100%;
+}
+
+.searchBox,
+.submitButton {
+    font-family: $heading-font-family;
+    font-size: 1.5em;
+    font-weight: $heading-font-weight;
+    text-transform: uppercase;
+}
+
+.searchBox {
+    appearance: none;
+    border: 1px solid $swatch-border-main;
+    border-radius: 0;
+    border-right: 0;
+    display: block;
+    flex: 2;
+    padding: pxtorem(8px);
+    text-transform: none;
+    width: 100%;
+
+    @include breakpoint(800px) {
+        padding: pxtorem(15px);
+    }
+}
+
+.submitButton {
+    background-color: $swatch-primary;
+    border: 0;
+    border-left: 0;
+    color: $swatch-white;
+    cursor: pointer;
+    flex: 1;
+    font-size: 1em;
+    letter-spacing: kerning(60);
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $swatch-primary-alt;
+    }
+
+    @include breakpoint(800px) {
+        flex: 0.5;
+    }
+}

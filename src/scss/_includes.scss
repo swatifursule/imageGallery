@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #INCLUDE STYLES
+   ========================================================================== */
+
+/**
+ * This file is for SCSS that doesn't export CSS directly, so any SCSS
+ * functions, mixins or extends. This file is included in './global', but also
+ * should be imported wherever required.
+ *
+ * Import instructions
+ * -------------------
+ *
+ * From within SCSS. This path will change based upon your current working
+ * directory.
+ *     - @import './includes';
+ *
+ * From within WebPack / Vue. This is an absolute path to the file, which
+ * has mostly been aliased from within './build/webpack.base.conf.js'.
+ *     - @import '~styles/includes';
+ */
+
+@import 'config/grid', 'config/site', 'config/breakpoints', 'config/fonts',
+    'config/theme';
+
+@import 'extends/all';
+@import 'functions/all';
+@import 'mixins/all';
+
+@import 'libs/polyfluid-sizing';
+
+@import 'utilities';
+
+@import 'grid/functions', 'grid/mixins';

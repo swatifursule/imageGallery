@@ -1,0 +1,35 @@
+.button {
+    background-color: $swatch-gray-lighter;
+    border: 0;
+    border-radius: 5px;
+    color: $swatch-primary;
+    cursor: pointer;
+    display: block;
+    font-size: $base-font-size;
+    font-weight: $font-weight-bold;
+    letter-spacing: kerning(140);
+    line-height: 1;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+
+    &[disabled] {
+        color: $swatch-gray-darker;
+        cursor: default;
+        opacity: 0.4;
+    }
+}
+
+.button--inline {
+    display: inline-block;
+}
+
+.button--small {
+    font-size: 0.8em;
+    max-width: 300px;
+}

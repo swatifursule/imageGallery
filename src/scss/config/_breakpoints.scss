@@ -1,0 +1,19 @@
+@import './grid';
+@import '../functions/unit-conversion';
+
+$breakpoints: (
+    zero: 0,
+    x-small: 400px,
+    small: 600px,
+    medium: 800px,
+    large: 1024px
+);
+
+/**
+ * If set to true, the width of the container will be set to the exact
+ * breakpoint width at each breakpoint. If set to false, the container will
+ * be 100% width all the way up to maximum. This gives you the option of having
+ * a completely fluid layout, if you want.
+ * @type {Boolean}
+ */
+$snap-to-breakpoints: false;
